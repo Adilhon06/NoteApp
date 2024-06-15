@@ -9,16 +9,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adilhon.noteapp.R
 import com.adilhon.noteapp.databinding.FragmentNoteBinding
-import com.adilhon.noteapp.ui.adapters.NoteAdapter
-import com.adilhon.noteapp.ui.fragments.extension.getBackStackData
-import com.adilhon.noteapp.ui.fragments.models.NoteModel
+
 
 class NoteFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteBinding
-    private lateinit var noteAdapter: NoteAdapter
-    private val list: ArrayList<NoteModel> = ArrayList()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
