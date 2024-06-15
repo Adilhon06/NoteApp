@@ -49,12 +49,17 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    // Navigation
     val navVersion = "2.7.7"
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
+    // Lottie Animation
     val lottieVersion = "4.2.0"
     implementation ("com.airbnb.android:lottie:$lottieVersion")
 
+    // Dots Indicator
     implementation ("com.tbuonomo:dotsindicator:4.3")
+
+    //
 }

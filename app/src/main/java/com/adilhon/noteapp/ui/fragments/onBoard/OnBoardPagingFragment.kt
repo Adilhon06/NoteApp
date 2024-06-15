@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import com.adilhon.noteapp.R
 import com.adilhon.noteapp.databinding.FragmentOnBoardPagingBinding
+import com.adilhon.noteapp.utils.PreferenceHelper
 
 class OnBoardPagingFragment : Fragment() {
 
@@ -24,23 +26,33 @@ class OnBoardPagingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
+        goToNoteFragment()
     }
 
     private fun initialize() = with(binding) {
         when(requireArguments().getInt(ARG_ONBOARD_POSITION)) {
             0->{
-                onTxt.text = "Очень удобный функционал"
+                tvMeeting.text = "Очень удобный функционал"
                 lottieAnimation.setAnimation(R.raw.first)
             }
             1->{
-                onTxt.text = "Быстрый, качественный продукт"
+                tvMeeting.text = "Быстрый, качественный продукт"
                 lottieAnimation.setAnimation(R.raw.second )
             }
             2->{
-                onTxt.text = "Куча функций и интересных фишек"
-                start.isVisible = true
+                tvMeeting.text = "Куча функций и интересных фишек"
+                tvStart.isVisible = true
                 lottieAnimation.setAnimation(R.raw.thrid)
             }
+        }
+    }
+
+    private fun goToNoteFragment() = with(binding) {
+        val preferenceHelper = PreferenceHelper()
+        preferenceHelper.unit(requireContext())
+        tvStart.setOnClickListener {
+            preferenceHelper.saveBoolean = true
+            findNavController().navigate(R.id.action_onBoardFragment_to_noteFragment)
         }
     }
 

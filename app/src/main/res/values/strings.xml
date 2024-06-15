@@ -4,4 +4,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="skip">Пропустить</string>
     <string name="start">Начать работу</string>
+    <string name="search">Поиск заметок</string>
+    <string name="plus">+</string>
+    <string name="note">Заметки</string>
+    <string name="title">title</string>
+    <string name="_16_n_18_13">16 января \n 18:13</string>
+    <string name="title1">Tittle</string>
+    <string name="write_something">Начните ввод</string>
+    <string name="done">Готово</string>
+    <string name="month">30 мая</string>
+    <string name="time">17:21</string>
 </resources>

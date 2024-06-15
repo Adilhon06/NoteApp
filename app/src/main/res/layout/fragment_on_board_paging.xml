@@ -23,7 +23,7 @@
         app:lottie_renderMode="hardware" />
 
     <TextView
-        android:id="@+id/on_txt"
+        android:id="@+id/tv_meeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -33,7 +33,7 @@
         tools:text="Очень удобный функционал" />
 
     <TextView
-        android:id="@+id/start"
+        android:id="@+id/tv_start"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
