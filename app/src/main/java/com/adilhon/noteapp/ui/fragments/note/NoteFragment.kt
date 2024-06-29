@@ -21,7 +21,7 @@ class NoteFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteBinding
     private val noteAdapter: NoteAdapter by lazy {
-        NoteAdapter(requireContext())
+        NoteAdapter(requireContext(), ::onClick)
     }
     private val noteList: ArrayList<NoteModel> = ArrayList()
 
@@ -74,4 +74,9 @@ class NoteFragment : Fragment() {
         }
     }
 
+    private fun onClick(item: NoteModel) {
+        val bundle = Bundle()
+        bundle.putSerializable("model", item)
+        findNavController().navigate(R.id.action_noteFragment_to_noteDetailFragment, bundle)
+    }
 }

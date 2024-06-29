@@ -11,7 +11,7 @@ import com.adilhon.noteapp.R
 import com.adilhon.noteapp.databinding.NoteItemBinding
 import com.adilhon.noteapp.ui.fragments.models.NoteModel
 
-class NoteAdapter(private val context: Context) :
+class NoteAdapter(private val context: Context, val onClick: (note: NoteModel) -> Unit) :
     ListAdapter<NoteModel, NoteAdapter.ViewHolder>(DiffCallback()) {
 
     private var noteList = listOf<NoteModel>()
@@ -22,6 +22,10 @@ class NoteAdapter(private val context: Context) :
             binding.tvNote.text = item.title
             binding.tvTitleNote.text = item.description
             binding.tvDateTime.text = item.time
+
+            itemView.setOnClickListener {
+                onClick(item)
+            }
 
             if (item.containerColor == "white") {
                 binding.container.setBackgroundColor(ContextCompat.getColor(context, R.color.white))

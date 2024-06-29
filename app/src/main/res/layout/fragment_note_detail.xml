@@ -45,6 +45,7 @@
             android:layout_height="wrap_content"
             android:gravity="end"
             android:text="@string/done"
+            android:visibility="gone"
             android:textColor="@color/orange"
             android:textSize="18sp"
             android:textStyle="bold" />

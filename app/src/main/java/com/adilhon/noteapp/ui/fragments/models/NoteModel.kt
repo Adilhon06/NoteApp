@@ -4,6 +4,8 @@ import android.provider.ContactsContract.RawContacts.Data
 import androidx.lifecycle.LiveData
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serial
+import java.io.Serializable
 
 @Entity(tableName = "note")
 data class NoteModel(
@@ -12,4 +14,4 @@ data class NoteModel(
     val description: String,
     val time: String,
     val containerColor: String
-)
+): Serializable
