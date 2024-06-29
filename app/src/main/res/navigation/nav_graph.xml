@@ -9,7 +9,11 @@
         android:id="@+id/onBoardFragment"
         android:name="com.adilhon.noteapp.ui.fragments.onBoard.OnBoardFragment"
         android:label="fragment_on_board"
-        tools:layout="@layout/fragment_on_board" />
+        tools:layout="@layout/fragment_on_board" >
+        <action
+            android:id="@+id/action_onBoardFragment_self"
+            app:destination="@id/onBoardFragment" />
+    </fragment>
     <action
         android:id="@+id/action_onBoardFragment_to_noteFragment"
         app:destination="@id/noteFragment" />
@@ -18,7 +22,8 @@
         android:id="@+id/noteFragment"
         android:name="com.adilhon.noteapp.ui.fragments.note.NoteFragment"
         android:label="fragment_note"
-        tools:layout="@layout/fragment_note" />
+        tools:layout="@layout/fragment_note" >
+    </fragment>
     <action
         android:id="@+id/action_noteFragment_to_noteDetailFragment"
         app:destination="@id/noteDetailFragment" />
@@ -33,8 +38,9 @@
         android:id="@+id/noteDetailFragment"
         android:name="com.adilhon.noteapp.ui.fragments.note.NoteDetailFragment"
         android:label="fragment_note_detail"
-        tools:layout="@layout/fragment_note_detail" />
-    <action
-        android:id="@+id/action_noteDetailFragment_to_noteFragment"
-        app:destination="@id/noteFragment" />
+        tools:layout="@layout/fragment_note_detail" >
+        <action
+            android:id="@+id/action_noteDetailFragment_to_noteFragment2"
+            app:destination="@id/noteFragment" />
+    </fragment>
 </navigation>

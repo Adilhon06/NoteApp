@@ -1,17 +1,45 @@
 package com.adilhon.noteapp.ui.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.adilhon.noteapp.R
 import com.adilhon.noteapp.databinding.NoteItemBinding
 import com.adilhon.noteapp.ui.fragments.models.NoteModel
 
-class NoteAdapter : ListAdapter<NoteModel, NoteAdapter.ViewHolder>(DiffCallback()) {
-    class ViewHolder(private val binding: NoteItemBinding) : RecyclerView.ViewHolder(binding.root) {
+class NoteAdapter(private val context: Context) :
+    ListAdapter<NoteModel, NoteAdapter.ViewHolder>(DiffCallback()) {
+
+    private var noteList = listOf<NoteModel>()
+
+    inner class ViewHolder(private val binding: NoteItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: NoteModel) {
             binding.tvNote.text = item.title
+            binding.tvTitleNote.text = item.description
+            binding.tvDateTime.text = item.time
+
+            if (item.containerColor == "white") {
+                binding.container.setBackgroundColor(ContextCompat.getColor(context, R.color.white))
+            } else if (item.containerColor == "red") {
+                binding.container.setBackgroundColor(ContextCompat.getColor(context, R.color.red))
+            } else if (item.containerColor == "gray") {
+                binding.container.setBackgroundColor(
+                    ContextCompat.getColor(
+                        context,
+                        R.color.background_gray
+                    )
+                )
+            }else if (item.containerColor == "")  binding.container.setBackgroundColor(
+                ContextCompat.getColor(
+                    context,
+                    R.color.background_gray
+                )
+            )
         }
     }
 
